@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './incoming-amount.component.html',
 })
 export class IncomingAmountComponent implements OnInit {
+  itemAmount: number;
 
   constructor() { }
 

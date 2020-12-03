@@ -1,4 +1,6 @@
+import { Incoming } from '../incoming-amount/incoming-amount.model';
 import { Component, OnInit } from '@angular/core';
+import { IncomingAmountService } from 'src/app/components/incoming-amount/incoming-amount.service';
 
 @Component({
   selector: 'app-count-bar',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class CountBarComponent implements OnInit {
+  selected = false;
 
-  constructor() { }
+  constructor(private IncomingAmount: IncomingAmountService) { }
 
   ngOnInit(): void {
   }
 
+  onAddAmout(): void {
+    const Incoming1 = new Incoming[];
+  }
 }

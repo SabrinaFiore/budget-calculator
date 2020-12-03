@@ -2,12 +2,16 @@
   <div class="add">
     <div class="add_container">
       <select class="add_type">
-        <option value="ing" selected>+</option>
+        <option value="ing" *ngIf="selected(onAddAmout())" selected>+</option>
         <option value="egr">-</option>
       </select>
       <input type="text" class="add_descripcion" placeholder="add Descripción">
       <input type="number" class="add_value" placeholder="value">
-      <button class="add_btn"><i class="ion-ios-checkmark-outline"></i></button>
+      <button
+        class="add_btn"
+        (click)="onAddAmount()">
+        <i class="ion-ios-checkmark-outline"></i>
+      </button>
     </div>
   </div>
 </form>

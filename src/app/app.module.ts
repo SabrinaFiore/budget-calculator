@@ -6,6 +6,8 @@ import { TotalAmountComponent } from './components/total-amount/total-amount.com
 import { IncomingAmountComponent } from './components/incoming-amount/incoming-amount.component';
 import { OutcomingAmountComponent } from './components/outcoming-amount/outcoming-amount.component';
 import { CountBarComponent } from './components/count-bar/count-bar.component';
+import { OutcomingAmountService } from './components/outcoming-amount/outcoming-amount.service';
+import { IncomingAmountService } from './components/incoming-amount/incoming-amount.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,10 @@ import { CountBarComponent } from './components/count-bar/count-bar.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    IncomingAmountService,
+    OutcomingAmountService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
