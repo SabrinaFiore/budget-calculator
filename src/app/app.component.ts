@@ -1,6 +1,6 @@
-import { Incoming } from './components/incoming-amount/incoming-amount.model';
-import { Component } from '@angular/core';
-import { Outcoming } from './components/outcoming-amount/outcoming-amount.model';
+import { Component, OnInit } from '@angular/core';
+import { incoming } from './components/incoming-amount/incoming-amount.model';
+import { outcoming } from './components/outcoming-amount/outcoming-amount.model';
 import { IncomingAmountService } from './components/incoming-amount/incoming-amount.service';
 import { OutcomingAmountService } from './components/outcoming-amount/outcoming-amount.service';
 
@@ -9,9 +9,9 @@ import { OutcomingAmountService } from './components/outcoming-amount/outcoming-
   templateUrl: './app.component.html',
 })
 
-export class AppComponent {
-  incoming: Incoming[] = [];
-  outcoming: Outcoming[] = [];
+export class AppComponent implements OnInit{
+  incoming: incoming[] = [];
+  outcoming: outcoming[] = [];
 
   constructor(private IncomingService: IncomingAmountService, private OutcomingService: OutcomingAmountService) {
     this.incoming = IncomingService.incoming;
@@ -21,17 +21,17 @@ export class AppComponent {
   getTotalIcoming(): any {
     let TotalIcoming = 0;
     this.incoming.forEach(incoming => {
-      TotalIcoming = + this.incoming.values;
+      TotalIcoming += incoming.value;
     });
-    return this.getTotalIcoming();
+    return TotalIcoming;
   }
 
   getTotalOutcoming(): any {
     let TotalOutcoming = 0;
     this.outcoming.forEach(outcoming => {
-      TotalOutcoming = + this.outcoming.values;
+      TotalOutcoming += outcoming.value;
     });
-    return this.getTotalOutcoming();
+    return TotalOutcoming;
   }
 
   getTotalPercentage(): any {
@@ -40,5 +40,9 @@ export class AppComponent {
 
   getTotalAmount(): any {
     return this.getTotalIcoming() + this.getTotalOutcoming();
+  }
+
+  ngOnInit(): void {
+    console.log(this.getTotalIcoming);
   }
 }

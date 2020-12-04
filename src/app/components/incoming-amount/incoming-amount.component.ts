@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-incoming-amount',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IncomingAmountComponent implements OnInit {
   itemAmount: number;
+
+  @Input() incoming = [];
 
   constructor() { }
 

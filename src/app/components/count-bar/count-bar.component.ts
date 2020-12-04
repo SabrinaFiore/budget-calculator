@@ -1,4 +1,3 @@
-import { Incoming } from '../incoming-amount/incoming-amount.model';
 import { Component, OnInit } from '@angular/core';
 import { IncomingAmountService } from 'src/app/components/incoming-amount/incoming-amount.service';
 

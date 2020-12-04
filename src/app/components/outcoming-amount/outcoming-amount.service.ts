@@ -1,10 +1,11 @@
-import { Injectable } from "@angular/core";
-import { Outcoming } from './outcoming-amount.model';
+import { Injectable } from '@angular/core';
+import { outcoming } from './outcoming-amount.model';
 
 @Injectable()
 export class OutcomingAmountService {
-  outcoming: Outcoming[] = [
-    new Outcoming('ciao', 2, 200)
+  outcoming: outcoming[] = [
+    new outcoming('House', 2000),
+    new outcoming('Car', 1000),
   ];
 
   constructor() {

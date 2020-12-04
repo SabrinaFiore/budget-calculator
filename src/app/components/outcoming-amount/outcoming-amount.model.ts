@@ -1,7 +1,6 @@
-export class Outcoming {
+export class outcoming {
   constructor(
     public description: string,
     public value: number,
-    public percentage: number
   ){}
 }
