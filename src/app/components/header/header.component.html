@@ -6,15 +6,15 @@
   <div class="budget_income clearStyle">
       <div class="budget_income--text">Entry</div>
       <div class="right">
-          <div class="budget_income--value">{{ incomingAmount }}</div>
-          <div class="budget_income--percentage">&nbsp;</div>
+        <div class="budget_income--value">+ {{ totalIncomingAmount }}</div>
+        <div class="budget_income--percentage">&nbsp;</div>
       </div>
   </div>
   <div class="budget_outcoming clearStyle">
       <div class="budget_outcoming--text">outcomings</div>
       <div class="right clearStyle">
-          <div class="budget_outcoming--value">{{ outcomingAmount }}</div>
-          <div class="budget_outcoming--percentage">45%</div>
+        <div class="budget_outcoming--value">+ {{ totalOutcomingAmount }}</div>
+        <div class="budget_outcoming--percentage">{{ totalPercentageAmount }} %</div>
       </div>
   </div>
 </div>

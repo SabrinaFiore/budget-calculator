@@ -15,7 +15,7 @@ export class CountBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onAddAmout(): void {
-    const Incoming1 = new Incoming[];
-  }
+  // onAddAmout(): void {
+  //   const Incoming1 = new Incoming[];
+  // }
 }
