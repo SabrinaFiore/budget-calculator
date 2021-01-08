@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { OutcomingAmountService } from './outcoming-amount.service';
+import { outcoming } from './outcoming-amount.model';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-outcoming-amount',
@@ -6,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutcomingAmountComponent implements OnInit {
 
-  constructor() { }
+  outcoming: any[];
+  @Input() totalAmount: number;
+
+  constructor(private OutcomingAmountService: OutcomingAmountService) { }
 
   ngOnInit(): void {
+    this.outcoming = this.OutcomingAmountService.outcoming;
   }
 
+  deleteOutcoming(outcoming: outcoming) {
+    this.OutcomingAmountService.delete(outcoming);
+  }
+
+  calculatePercentage(outcoming: outcoming) {
+    return outcoming.value/this.totalAmount;
+  }
 }

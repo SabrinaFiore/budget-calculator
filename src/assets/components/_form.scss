@@ -69,35 +69,16 @@
 .container {
   width: 1000px;
   margin: 60px auto;
+  padding: 2rem;
 }
 
 .incoming {
-  float: left;
   width: 100%;
-  max-width: 475px;
-  margin-right: 50px;
-
-  @media only screen and (min-device-width : 768px) {
-    float: unset;
-  }
 }
 
 .outcoming {
-  float: left;
   width: 100%;
-  max-width: 475px;
-
-  @media only screen and (min-device-width : 768px) {
-    float: unset;
-    padding-top: 2rem;
-  }
-}
-
-h2 {
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 15px;
+  padding-top: 2rem;
 }
 
 .incoming_title { color: #28B9B5; }
@@ -113,5 +94,4 @@ h2 {
   &:hover {
     .item_descripcion { font-weight: 900; }
   }
-
 }

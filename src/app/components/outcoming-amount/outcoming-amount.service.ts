@@ -11,6 +11,11 @@ export class OutcomingAmountService {
   constructor() {
   }
 
+  delete(outcoming: outcoming) {
+    const index: number = this.outcoming.indexOf(outcoming);
+    this.outcoming.splice(index, 1);
+  }
+
   addAmount(): void {
   }
 }

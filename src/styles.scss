@@ -2,9 +2,10 @@
 
 /* settings */
 @import 'assets/settings/reset';
+@import 'assets/settings/typography';
+@import 'assets/settings/headings';
 
 /* components */
-@import 'assets/components/budget';
+@import 'assets/components/amount';
 @import 'assets/components/header';
-@import 'assets/components/items';
 @import 'assets/components/form';

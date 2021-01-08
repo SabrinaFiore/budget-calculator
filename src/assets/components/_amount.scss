@@ -39,21 +39,6 @@
   text-align: center;
 }
 
-.incoming {
-  .item_value,
-  .item_delete--btn {
-    color: #28B9B5;
-  }
-}
-
-.outcoming  {
-  .item_value,
-  .item_percentage,
-  .item_delete--btn {
-    color: #FF5049;
-  }
-}
-
 .item_delete {
   float: left;
 
@@ -77,3 +62,17 @@
   }
 }
 
+.incoming {
+  .item_value,
+  .item_delete--btn {
+    color: #28B9B5;
+  }
+}
+
+.outcoming  {
+  .item_value,
+  .item_percentage,
+  .item_delete--btn {
+    color: #FF5049;
+  }
+}

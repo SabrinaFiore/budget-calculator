@@ -1,20 +1,20 @@
 <div class="budget">
-  <div class="budget_title">
-    budget Disponible:
-  </div>
-  <div class="budget_value">{{ totalAmount }}</div>
+  <h1 class="budget_title">
+    Budget Disponible:
+  </h1>
+  <div class="budget_value">{{ totalAmount | currency: 'EUR': 'symbol':'3.2-2' }}</div>
   <div class="budget_income clearStyle">
-      <div class="budget_income--text">incoming</div>
-      <div class="right">
-        <div class="budget_income--value">+ {{ totalIncomingAmount }}</div>
-        <div class="budget_income--percentage">{{ totalPercentageAmount }} %</div>
-      </div>
+    <div class="budget_income--text">Incoming</div>
+    <div class="right">
+      <div class="budget_income--value">+ {{ totalIncomingAmount | currency: 'EUR': 'symbol':'3.2-2' }}</div>
+      <div class="budget_income--percentage">{{ totalPercentageAmount | percent }}</div>
+    </div>
   </div>
   <div class="budget_outcoming clearStyle">
-      <div class="budget_outcoming--text">outcomings</div>
-      <div class="right clearStyle">
-        <div class="budget_outcoming--value">- {{ totalOutcomingAmount }}</div>
-        <div class="budget_outcoming--percentage">{{ totalPercentageAmount }} %</div>
-      </div>
+    <div class="budget_outcoming--text">Outcoming</div>
+    <div class="right clearStyle">
+      <div class="budget_outcoming--value">- {{ totalOutcomingAmount | currency: 'EUR': 'symbol':'3.2-2' }}</div>
+      <div class="budget_outcoming--percentage">{{ totalPercentageAmount | percent }}</div>
+    </div>
   </div>
 </div>

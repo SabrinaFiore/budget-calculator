@@ -11,5 +11,7 @@
 
 <div class="container clearStyle">
   <app-incoming-amount></app-incoming-amount>
-  <app-outcoming-amount></app-outcoming-amount>
+  <app-outcoming-amount
+    [totalAmount]="getTotalAmount()"
+  ></app-outcoming-amount>
 </div>

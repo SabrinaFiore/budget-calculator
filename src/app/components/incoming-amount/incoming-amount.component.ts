@@ -1,3 +1,5 @@
+import { incoming } from './incoming-amount.model';
+import { IncomingAmountService } from './incoming-amount.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -5,13 +7,18 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './incoming-amount.component.html',
 })
 export class IncomingAmountComponent implements OnInit {
-  itemAmount: number;
+  // itemAmount: number;
 
-  @Input() incoming = [];
+  incoming: any[];
 
-  constructor() { }
+  constructor(private IncomingAmountService: IncomingAmountService) { }
 
   ngOnInit(): void {
+    this.incoming = this.IncomingAmountService.incoming;
+  }
+
+  clearLog(incoming: incoming) {
+    this.IncomingAmountService.delete(incoming);
   }
 
 }
