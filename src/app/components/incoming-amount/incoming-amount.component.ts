@@ -10,6 +10,7 @@ export class IncomingAmountComponent implements OnInit {
   // itemAmount: number;
 
   incoming: any[];
+  totalAmount: number;
 
   constructor(private IncomingAmountService: IncomingAmountService) { }
 
@@ -20,5 +21,4 @@ export class IncomingAmountComponent implements OnInit {
   clearLog(incoming: incoming) {
     this.IncomingAmountService.delete(incoming);
   }
-
 }

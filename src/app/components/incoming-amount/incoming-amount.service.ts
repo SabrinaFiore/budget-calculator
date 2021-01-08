@@ -8,14 +8,8 @@ export class IncomingAmountService {
     new incoming('Rent', 2000),
   ];
 
-  constructor() {
-  }
-
   delete(incoming: incoming) {
     const index: number = this.incoming.indexOf(incoming);
     this.incoming.splice(index, 1);
-  }
-
-  addAmount(): void {
   }
 }

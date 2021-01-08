@@ -1,15 +1,15 @@
 <div class="outcoming">
   <h2 class="outcoming_title">Outcoming</h2>
   <div *ngFor="let outcoming of outcoming"  class="item clearStyle" >
-      <div class="item_descripcion">{{ outcoming.description }}</div>
-      <div class="right clearStyle">
-        <div class="item_value">- {{ outcoming.value | currency: 'EUR': 'symbol':'3.2-2' }}</div>
-        <div class="item_percentage">{{ calculatePercentage(outcoming) }} %</div>
-        <div class="item_delete">
-          <button class="item_delete--btn">
-            <i class="ion-ios-close-outline" (click)="deleteOutcoming(outcoming)"></i>
-          </button>
-        </div>
+    <div class="item_descripcion">{{ outcoming.description }}</div>
+    <div class="right clearStyle">
+      <div class="item_value">- {{ outcoming.value | currency: 'EUR': 'symbol':'3.2-2' }}</div>
+      <div class="item_percentage">{{ calculatePercentage(outcoming) | percent }}</div>
+      <div class="item_delete">
+        <button class="item_delete--btn">
+          <i class="ion-ios-close-outline" (click)="deleteOutcoming(outcoming)"></i>
+        </button>
       </div>
+    </div>
   </div>
 </div>

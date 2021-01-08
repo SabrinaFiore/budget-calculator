@@ -8,6 +8,7 @@ import { OutcomingAmountComponent } from './components/outcoming-amount/outcomin
 import { CountBarComponent } from './components/count-bar/count-bar.component';
 import { OutcomingAmountService } from './components/outcoming-amount/outcoming-amount.service';
 import { IncomingAmountService } from './components/incoming-amount/incoming-amount.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { IncomingAmountService } from './components/incoming-amount/incoming-amo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     IncomingAmountService,

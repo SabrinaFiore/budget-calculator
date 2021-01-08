@@ -1,5 +1,9 @@
+import { outcoming } from './../outcoming-amount/outcoming-amount.model';
+import { OutcomingAmountService } from './../outcoming-amount/outcoming-amount.service';
 import { Component, OnInit } from '@angular/core';
-import { IncomingAmountService } from 'src/app/components/incoming-amount/incoming-amount.service';
+import { IncomingAmountService } from './../incoming-amount/incoming-amount.service';
+import { incoming } from '../incoming-amount/incoming-amount.model';
+
 
 @Component({
   selector: 'app-count-bar',
@@ -7,14 +11,23 @@ import { IncomingAmountService } from 'src/app/components/incoming-amount/incomi
 })
 
 export class CountBarComponent implements OnInit {
-  selected = false;
+  type: string = "incomingOperation";
+  descriptionInput: string;
+  valueInput: number;
 
-  constructor(private IncomingAmount: IncomingAmountService) { }
+  constructor(private IncomingAmountService: IncomingAmountService, private OutcomingAmountService: OutcomingAmountService) {}
 
   ngOnInit(): void {
   }
 
-  // onAddAmout(): void {
-  //   const Incoming1 = new Incoming[];
-  // }
+  operationType(event) {
+    this.type = event.target.value;
+  }
+
+  addAmount(){
+    if(this.type === "incomingOperation")
+      this.IncomingAmountService.incoming.push(new incoming(this.descriptionInput, this.valueInput));
+    else
+      this.OutcomingAmountService.outcoming.push(new outcoming(this.descriptionInput, this.valueInput));
+  }
 }

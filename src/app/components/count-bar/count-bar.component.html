@@ -1,15 +1,34 @@
-<form>
+<form (ngSubmit)="f.form.valid && addAmount()" #f="ngForm">
   <div class="add">
     <div class="add_container">
-      <select class="add_type">
-        <option value="ing" selected>+</option>
-        <option value="egr">-</option>
+      <select (change)="operationType($event)"
+          [ngClass]="{redfocus: type === 'outcomingOperation'}"
+          class="add_type"
+        >
+        <option value="incomingOperation" selected>+</option>
+        <option value="outcomingOperation">-</option>
       </select>
-      <input type="text" class="add_descripcion" placeholder="add Descripción">
-      <input type="number" class="add_value" placeholder="value">
-      <button
-        class="add_btn">
-        <i class="ion-ios-checkmark-outline"></i>
+      <input
+        [ngClass]="{ redfocus: type === 'outcomingOperation'}"
+        type="text"
+        class="add_descripcion"
+        placeholder="Add Description"
+        name="descriptionInput"
+        [(ngModel)]="descriptionInput" required
+        >
+      <input
+        [ngClass]="{ redfocus: type === 'outcomingOperation'}"
+        type="number"
+        class="add_value"
+        placeholder="value"
+        name="valueInput"
+        [(ngModel)]="valueInput" required
+        >
+      <button type="submit" class="add_btn">
+        <i
+          [ngClass]="{ red: type === 'outcomingOperation'}"
+          class="ion-ios-checkmark-outline">
+        </i>
       </button>
     </div>
   </div>
